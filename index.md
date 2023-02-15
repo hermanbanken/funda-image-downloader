@@ -1,4 +1,8 @@
 # Downloading images from Funda in max res
+
+Update! I made it into a tool: https://funda-image-downloader-tvorcx4jbq-ew.a.run.app/
+
+## Old manual instructions
 Go to Funda page, and hit "Alle media" ("All media").
 Paste this in the console, and click back to focus the page within 5s:
 
