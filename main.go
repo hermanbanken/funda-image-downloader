@@ -1,6 +1,7 @@
 package main
 
 import (
+	"crypto/tls"
 	"embed"
 	"html/template"
 	"io"
@@ -19,6 +20,7 @@ var re = regexp.MustCompile(`data-lazy-srcset="([^"]+)"`)
 var prefix = "data-lazy-srcset="
 
 func main() {
+	http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 	http.ListenAndServe(":"+os.Getenv("PORT"), http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		err := r.ParseForm()
 		if err != nil {
